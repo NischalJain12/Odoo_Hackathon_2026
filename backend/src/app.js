@@ -10,17 +10,24 @@ import apiRoutes from "./routes/index.js";
 const app = express();
 
 app.use(helmet());
+
 app.use(cors());
+
 app.use(compression());
+
 app.use(cookieParser());
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
+
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
-        message: "TransitOps Backend Running 🚀",
+        project: "TransitOps",
+        message: "Backend is running successfully 🚀",
     });
 });
 
